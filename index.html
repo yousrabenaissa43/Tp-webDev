@@ -9,6 +9,23 @@
     <meta name="author" content="Cake's shop owner">
     <meta name="description" content="Storefront for Cake's Shop">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script>
+        
+        function save() {
+            localStorage.setItem("liked", true);
+        }
+
+        window.onload = function () {
+            var favorite = document.getElementById('favorite');
+            if (window.localStorage) {
+                var storage = window.localStorage;
+                if (storage.getItem('liked') == 'true') {
+                    favorite.innerHTML = "Merci d'avoir aimé nos produits!";
+                }
+            }
+        }
+    </script>
 </head>
 
 <header id="mainheader">
@@ -16,28 +33,36 @@
         <img src="assets/images/cake.svg" height="55" />
     </nav>
 </header>
+<button onclick="save()" type="button">J'aime</button>
+        <span id="favorite">
+        </span>
 
 
-<git branch -M main style="width:1000px;margin-left: auto;margin-right: auto;">
-    <main id="main">
-        
-       
-         <aside id="leftmenu">
+
+        <aside id="leftmenu">
             <img src="assets/images/logo.png" />
             <header>
                 <h4 style="text-align: center;">Explorez nos cakes</h4>
             </header>
-            <input type="search" class="searchbox" placeholder="Chercher dans notre boutique" />
-
+            <input type="search" class="searchbox" placeholder="Search our store" />
+            <ul>
+                <li><a href="tousdetails.html">Tous</a></li>
+                <li><a href="cheesecakes.html">Cheese cakes</a></li>
+                <li><a href="pies.html">Tartes</a></li>
+                <li><a href="promos.html">Promotions</a></li>
+            </ul>
         </aside>
+    <main id="main">
+        
         <style>
+           
             body {
                margin-top: 0px;
                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                margin-left: auto;
                margin-right: auto;
                background-color: #e6e4d9;
-               background-image: url('pattern.png');
+               background-image: url('assets/images/pattern.png');
            }
        
            #mainheader {
@@ -84,10 +109,7 @@
                display: block;
            }
        </style>
-        <figure>
-            <img src="assets/images/cakes.jpg" width="600" alt="La vitrine de notre boutique" />
-            <figcaption>Vitrine de la boutique Cake's shop</figcaption>
-         </figure>
+        
         <article>
 
             <header>
