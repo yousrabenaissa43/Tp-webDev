@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quotes for life</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: purple;
+    }
+
+    .jumbotron {
+      background-color: gold;
+    }
+    h1,p{
+        color:beige;
+    }
+  </style>
+</head>
+
+<body> <!-- Call the function on page load -->
+    <h1>Quotes</h1>
+    <div></div>
+
+    body onload="getRandomQuote()"> <!-- Call the function on page load -->
+    <div class="jumbotron text-center">
+      <h1 class="display-4">Quotes for life</h1>
+      <p class="lead">Get ready to be inspired!</p>
+      <hr class="my-4">
+      <h3 id="quote-domain"></h3>
+      <p id="quote-content"></p>
+      <button class="btn btn-primary" onclick="getRandomQuote()">Get Another Quote</button>
+      <a href="features/addquote/addquote.html" class="btn btn-success">Add a Quote</a>
+      <a href="features/quotelist/quotelist.html" class="btn btn-info">List all Quotes</a>
+    </div>
+  
+    <script>
+    // Function to get a random quote
+    function getRandomQuote() {
+       fetch('http://localhost:5500/qapi/randomquotes')
+          .then(response => response.json())
+          .then(data => {
+            const quoteDomain = document.getElementById('quote-domain');
+            const quoteContent = document.getElementById('quote-content');
+            quoteDomain.textContent = data[0].domain;
+            quoteContent.textContent = data[0].content;
+          })
+          .catch(error => console.log(error));
+      }
+    </script>
+
+
+    <footer>
+        <Center>
+        <p>&copy; Ecole Nationale d'Ingénieurs de Tunis - TP2 Dev web avancé</p>
+        </Center>
+      </footer>
+</body>
+
+</html>

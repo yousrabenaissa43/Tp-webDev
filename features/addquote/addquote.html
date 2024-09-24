@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Quotes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Add a quote</h1>
+    
+  </div>
+  <br>
+  <br>
+  <div class="container"></div>
+    <center><a href="/" class="btn btn-primary">Home</a></center>
+  </div>
+
+  <div class="container"></div>
+  <h1>Add a Quote</h1>
+  <form id="add-quote-form" method="POST">
+    <div class="form-group">
+      <label for="domain">Domain</label>
+      <input type="text" class="form-control" id="question" name="question" required>
+    </div>
+    <div class="form-group">
+      <label for="content">Content</label>
+      <input type="text" class="form-control" id="answer" name="answer" required>
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Quote</button>
+  </form>
+  </div>
+
+ <script src="./addquote.js"></script>
+
+  <footer>
+    <Center>
+        <p>&copy; Ecole Nationale d'Ingénieurs de Tunis - TP2 Dev web avancé</p>
+    </Center>
+  </footer>
+
+</body>
+</html>
