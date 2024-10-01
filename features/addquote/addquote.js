@@ -6,7 +6,7 @@ async function addQuote(domain, content, rating) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ domain, content, rating }), 
+        body: JSON.stringify({ domain, content, rating }) 
       });
   
       if (response.ok) {
@@ -23,14 +23,14 @@ async function addQuote(domain, content, rating) {
   document.getElementById('add-quote-form').addEventListener('submit', async (event) => { 
     event.preventDefault(); // Prevent default form submission behavior
   
-    const domainElement = document.getElementById('domain'); 
-    const contentElement = document.getElementById('content'); 
-    const ratingElement = document.getElementById('rating');
+    const domainElement = document.getElementById('domain').value;  
+    const contentElement = document.getElementById('content').value; 
+    const ratingElement = document.getElementById('rating').value;
   
-    const domain = domainElement.value; 
-    const content = contentElement.value; 
-    const rating = ratingElement.value;
+    /*const domain = domainElement
+    const content = contentElement 
+    const rating = ratingElement.value; */
   
-    await addQuote(domain, content, rating);
+    await addQuote(domainElement, contentElement, ratingElement);
   });
   
